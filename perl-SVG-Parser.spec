@@ -13,7 +13,6 @@ URL:		http://search.cpan.org/dist/%{module}
 Source:		http://www.cpan.org/modules/by-module/SVG/%{module}-%{version}.tar.bz2
 BuildRequires:	perl(XML::SAX) perl(XML::Parser) perl(SVG)
 Buildarch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 SVG::Parser is an XML parser for SVG Documents. It takes XML as input and
