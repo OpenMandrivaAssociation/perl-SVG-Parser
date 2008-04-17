@@ -11,7 +11,10 @@ License:	GPL or Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source:		http://www.cpan.org/modules/by-module/SVG/%{module}-%{version}.tar.bz2
-BuildRequires:	perl(XML::SAX) perl(XML::Parser) perl(SVG)
+BuildRequires:	perl(XML::SAX)
+BuildRequires:	perl(XML::Parser)
+BuildRequires:	perl(SVG)
+BuildRequires:	perl(Module::Build)
 Buildarch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
@@ -32,16 +35,15 @@ SVG::Parser::SAX.
 %setup -q -n %{module}-%{version}
 
 %build
-perl -pi -e 's/\cM//' examples/*
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+%{__perl} Build.PL installdirs=vendor
+./Build
 
 %install
 rm -rf %{buildroot}
-%makeinstall_std
+./Build install destdir=%{buildroot}
 
 %check
-%{__make} test
+./Build test
 
 %clean 
 rm -rf %{buildroot}
