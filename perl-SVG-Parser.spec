@@ -1,22 +1,22 @@
-%define module	SVG-Parser
-%define name	perl-%{module}
-%define version 1.03
-%define release %mkrel 3
+%define upstream_name	 SVG-Parser
+%define upstream_version 1.03
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Perl XML Parser for Scalable Vector Graphics (SVG) documents
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/SVG/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/SVG/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildRequires:	perl(Module::Build)
+BuildRequires:	perl(SVG)
 BuildRequires:	perl(XML::SAX)
 BuildRequires:	perl(XML::Parser)
-BuildRequires:	perl(SVG)
-BuildRequires:	perl(Module::Build)
 Buildarch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 SVG::Parser is an XML parser for SVG Documents. It takes XML as input and
@@ -32,7 +32,7 @@ the relevant parser module directly; see SVG::Parser::Expat and
 SVG::Parser::SAX.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Build.PL installdirs=vendor
@@ -53,5 +53,3 @@ rm -rf %{buildroot}
 %doc README examples
 %{perl_vendorlib}/SVG
 %{_mandir}/*/*
-
-
