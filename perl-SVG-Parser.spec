@@ -13,8 +13,9 @@ Source0:	http://www.cpan.org/modules/by-module/SVG/%{upstream_name}-%{upstream_v
 
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(SVG)
-BuildRequires:	perl(XML::SAX)
 BuildRequires:	perl(XML::Parser)
+BuildRequires:	perl(XML::SAX)
+BuildRequires:	perl(XML::SAX::Expat)
 Buildarch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
