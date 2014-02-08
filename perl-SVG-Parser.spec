@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 5
+Release:    6
 
 Summary:	Perl XML Parser for Scalable Vector Graphics (SVG) documents
 License:	GPL+ or Artistic
