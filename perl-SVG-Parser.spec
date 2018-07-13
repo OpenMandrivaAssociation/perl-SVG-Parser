@@ -10,6 +10,7 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/SVG/%{modname}-%{modver}.tar.bz2
 Buildarch:	noarch
+BuildRequires:	perl(Test)
 BuildRequires:	perl(Module::Build)
 BuildRequires:	perl(SVG)
 BuildRequires:	perl(XML::Parser)
