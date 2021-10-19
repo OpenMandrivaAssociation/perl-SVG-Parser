@@ -31,10 +31,10 @@ the relevant parser module directly; see SVG::Parser::Expat and
 SVG::Parser::SAX.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{modver}
 
 %build
-%__perl Build.PL installdirs=vendor
+perl Build.PL installdirs=vendor
 ./Build
 
 %install
@@ -46,5 +46,5 @@ SVG::Parser::SAX.
 %files 
 %doc README examples
 %{perl_vendorlib}/SVG
-%{_mandir}/man3/*
+%doc %{_mandir}/man3/*
 
