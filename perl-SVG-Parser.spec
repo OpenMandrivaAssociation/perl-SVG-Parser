@@ -3,12 +3,12 @@
 
 Summary:	Perl XML Parser for Scalable Vector Graphics (SVG) documents
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	17
+Version:	%{modver}
+Release:	18
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/SVG/%{modname}-%{modver}.tar.bz2
+Url:		https://metacpan.org/dist/SVG-Parser
+Source0:	https://cpan.metacpan.org/authors/id/P/PE/PETERW/SVG-Parser-%{modver}.tar.gz
 Buildarch:	noarch
 BuildRequires:	perl(Test)
 BuildRequires:	perl(Module::Build)
